@@ -1,4 +1,7 @@
-# File Garden's Mail Server
+# Mail Server
+
+> [!WARNING]
+> This is no longer maintained and may be vulnerable to security issues. It remains public for historic purposes.
 
 This README walks you through setting up an instance of our mail server.
 
@@ -51,7 +54,7 @@ Install [Docker](https://docs.docker.com/engine/install) on your server. Docker 
 Clone this repository onto your server by running the following command using [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 ```sh
-git clone https://github.com/filegarden/mail.git
+git clone https://github.com/GrantGryczan/mail.git
 ```
 
 This creates a directory called `mail` containing this repository's files. You can go into this directory by running the following.
@@ -107,7 +110,7 @@ To obtain a Cloudflare API token:
 > [!CAUTION]
 > It's highly recommended the domain you choose for your Cloudflare token is **not** used for anything security-sensitive. That way, if an attacker ever compromises your token, their ability to impact you negatively will be limited. For security-critical applications, we advise using a throwaway domain **that isn't used in your hostname or email addresses.** You'll simply point some DNS records from your main domain(s) to the throwaway domain. We'll walk through how to do this when [setting DNS records](#setting-dns-records).
 >
-> There's a set of `.xyz` domains which are perfect for this, known as the "1.111B class". They're designed to be cheap, costing less than $1/year from [Namecheap](https://www.namecheap.com/). It's called the 1.111B class because there are 1.111 billion domains in it: any domain that's 6 to 9 digits followed by `.xyz`. For example, File Garden uses `985532063.xyz`. (985532063 is "garden" converted from base 36 to base 10.)
+> There's a set of `.xyz` domains which are perfect for this, known as the "1.111B class". They're designed to be cheap, costing less than $1/year from [Namecheap](https://www.namecheap.com/). It's called the 1.111B class because there are 1.111 billion domains in it: any domain that's 6 to 9 digits followed by `.xyz`. For example, we used `985532063.xyz`.
 >
 > If you use a cheap throwaway domain for your Cloudflare token, _only_ use it for your Cloudflare token. Using a cheap throwaway domain for just your token has no impact on your mail, whereas using it for your hostname or email addresses can make your mail more likely to be marked as spam or rejected, since spammers often use cheap throwaway domains.
 
